@@ -1,0 +1,58 @@
+backend:
+  name: git-gateway
+  branch: main  # use the default branch of this repo
+
+media_folder: "public/uploads"   # where images are stored in the repo
+public_folder: "/uploads"        # how the site refers to uploaded images
+
+collections:
+  # Home page content
+  - name: "home"
+    label: "Home Page"
+    files:
+      - file: "content/home.json"
+        label: "Home Content"
+        name: "homeContent"
+        fields:
+          - { name: "heroTitle", label: "Hero Title", widget: "string" }
+          - { name: "heroSubtitle", label: "Hero Subtitle", widget: "string" }
+          - { name: "heroButtonText", label: "Hero Button Text", widget: "string" }
+          - { name: "heroButtonLink", label: "Hero Button Link", widget: "string" }
+
+  # Services list
+  - name: "services"
+    label: "Services"
+    files:
+      - file: "content/services.json"
+        label: "Services List"
+        name: "servicesList"
+        fields:
+          - label: "Services"
+            name: "items"
+            widget: "list"
+            fields:
+              - { name: "title", label: "Service Title", widget: "string" }
+              - { name: "summary", label: "Short Summary", widget: "text" }
+
+  # About page
+  - name: "about"
+    label: "About LagoonTech"
+    files:
+      - file: "content/about.json"
+        label: "About Page"
+        name: "aboutPage"
+        fields:
+          - { name: "headline", label: "Headline", widget: "string" }
+          - { name: "body", label: "Body", widget: "text" }
+
+  # Contact & global settings
+  - name: "settings"
+    label: "Contact & Settings"
+    files:
+      - file: "content/settings.json"
+        label: "Site Settings"
+        name: "siteSettings"
+        fields:
+          - { name: "email", label: "Contact Email", widget: "string" }
+          - { name: "phone", label: "Phone", widget: "string" }
+          - { name: "address", label: "Address", widget: "text" }

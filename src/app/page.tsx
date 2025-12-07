@@ -5,6 +5,10 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
+import homeContent from "../../content/home.json";
+import servicesData from "../../content/services.json";
+import aboutData from "../../content/about.json";
+import settingsData from "../../content/settings.json";
 
 export default function Home() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
@@ -16,6 +20,12 @@ export default function Home() {
   const closeDropdown = () => {
     setActiveDropdown(null);
   };
+
+  // Destructure content from JSON files
+  const { heroTitle, heroSubtitle, heroButtonText, heroButtonLink } = homeContent;
+  const services = servicesData.items || [];
+  const { headline, body } = aboutData;
+  const { email, phone, address } = settingsData;
 
   return (
     <div className="min-h-screen bg-gray-50" onClick={closeDropdown}>
@@ -159,7 +169,7 @@ export default function Home() {
                       PNG Child Immunization System
                     </a>
                     <a
-                      href="https://connectpng.netlify.app/" 
+                      href="https://connectpng.netlify.app/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600"
@@ -240,16 +250,14 @@ export default function Home() {
             <div>
               <Badge className="bg-green-500 text-white mb-4">AI Platform Development Company</Badge>
               <h1 className="text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                Leading Papua New Guinea into the
-                <span className="text-green-600"> Digital Future</span>
+                {heroTitle}
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                A 100% Papua New Guinean-owned technology company delivering cutting-edge software engineering,
-                cloud computing, and comprehensive IT solutions with world-class expertise and local ownership.
+                {heroSubtitle}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" className="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-full font-semibold">
-                  Get Started Today
+                  <a href={heroButtonLink}>{heroButtonText}</a>
                 </Button>
                 <Button size="lg" variant="outline" className="border-green-500 text-green-600 hover:bg-green-50 px-8 py-3 rounded-full font-semibold">
                   View Our Work
@@ -292,10 +300,10 @@ export default function Home() {
           <div className="text-center mb-16">
             <Badge className="bg-green-100 text-green-700 mb-4">Our Company</Badge>
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              100% Papua New Guinean-Owned Technology Excellence
+              {headline}
             </h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto">
-              Lagoon Technologies (PNG) Limited is a dynamic, locally-owned technology company proudly headquartered in Port Moresby, driving digital transformation and technological advancement across the region.
+              {body}
             </p>
           </div>
 
@@ -422,6 +430,28 @@ export default function Home() {
               we deliver cutting-edge solutions that drive digital transformation across Papua New Guinea.
             </p>
           </div>
+
+          {/* CMS-Managed Services */}
+          {services.length > 0 && (
+            <div className="mb-12">
+              <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">Featured Services</h3>
+              <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                {services.map((service, index) => (
+                  <Card key={index} className="hover:shadow-xl transition-all duration-300 border-2 border-green-500">
+                    <CardHeader>
+                      <CardTitle className="text-xl font-bold text-gray-900">{service.title}</CardTitle>
+                      <CardDescription className="text-gray-600">{service.summary}</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <Button className="w-full bg-green-500 hover:bg-green-600 text-white">
+                        Learn More
+                      </Button>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          )}
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
@@ -805,10 +835,9 @@ export default function Home() {
             <div>
               <h4 className="text-lg font-semibold mb-4">Contact</h4>
               <ul className="space-y-2 text-gray-400">
-                <li>Port Moresby, Papua New Guinea</li>
-                <li>emanuel@lagoontechnologies.com</li>
-                <li>egmabi@outlook.com</li>
-                <li>+675 72551575</li>
+                <li>{address}</li>
+                <li>{email}</li>
+                <li>{phone}</li>
               </ul>
             </div>
           </div>
