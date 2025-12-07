@@ -1,0 +1,88 @@
+{
+  "items": [
+    {
+      "name": "RPNGC - Digital Policing Operations System",
+      "description": "Comprehensive law enforcement management platform",
+      "category": "Law Enforcement",
+      "url": "https://policemanagementsystem.vercel.app/",
+      "status": "Live"
+    },
+    {
+      "name": "ALEMS - Advanced Law Enforcement Cybercrime Management System",
+      "description": "Cybercrime investigation and management system",
+      "category": "Cybersecurity",
+      "url": "https://cybercrime-3h6o.vercel.app/dashboard",
+      "status": "Live"
+    },
+    {
+      "name": "National Government Portal System",
+      "description": "Centralized government services and information portal",
+      "category": "Government",
+      "url": "https://pngdigital.netlify.app/",
+      "status": "Live"
+    },
+    {
+      "name": "PNG Cybersecurity Resource Hub",
+      "description": "National cybersecurity information and resource center",
+      "category": "Cybersecurity",
+      "url": "https://pngcsc.netlify.app/",
+      "status": "Live"
+    },
+    {
+      "name": "PNG Child Immunization System",
+      "description": "National health tracking and vaccination management",
+      "category": "Healthcare",
+      "url": "https://immunization.vercel.app/",
+      "status": "Live"
+    },
+    {
+      "name": "PNG Connect Road Management System",
+      "description": "Infrastructure and connectivity management platform",
+      "category": "Infrastructure",
+      "url": "https://connectpng.netlify.app/",
+      "status": "Live"
+    },
+    {
+      "name": "University Student Services System",
+      "description": "Academic management and student portal system",
+      "category": "Education",
+      "url": "https://studentservices-seven.vercel.app/",
+      "status": "Live"
+    },
+    {
+      "name": "PNG Electoral Voting System",
+      "description": "Democratic election management platform",
+      "category": "Government",
+      "url": "https://dashing-cendol-75e0c0.netlify.app/",
+      "status": "Live"
+    },
+    {
+      "name": "Corex Enterprise Resource Planning (ERP) System",
+      "description": "Comprehensive business management and resource planning platform",
+      "category": "Enterprise",
+      "url": "#contact",
+      "status": "Live"
+    },
+    {
+      "name": "Trackoon GPS Fleet Management System",
+      "description": "Real-time vehicle tracking and fleet optimization solution",
+      "category": "Transportation",
+      "url": "#contact",
+      "status": "Live"
+    },
+    {
+      "name": "Maze Human Resources System",
+      "description": "Complete HR management and employee portal system",
+      "category": "Human Resources",
+      "url": "#contact",
+      "status": "Live"
+    },
+    {
+      "name": "Document Management System",
+      "description": "Digital document storage and workflow management platform",
+      "category": "Enterprise",
+      "url": "#contact",
+      "status": "Live"
+    }
+  ]
+}

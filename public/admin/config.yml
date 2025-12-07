@@ -56,3 +56,21 @@ collections:
           - { name: "email", label: "Contact Email", widget: "string" }
           - { name: "phone", label: "Phone", widget: "string" }
           - { name: "address", label: "Address", widget: "text" }
+
+  # Products list
+  - name: "products"
+    label: "Products"
+    files:
+      - file: "content/products.json"
+        label: "Products List"
+        name: "productsList"
+        fields:
+          - label: "Products"
+            name: "items"
+            widget: "list"
+            fields:
+              - { name: "name", label: "Product Name", widget: "string" }
+              - { name: "description", label: "Description", widget: "text" }
+              - { name: "category", label: "Category", widget: "string" }
+              - { name: "url", label: "Product URL", widget: "string" }
+              - { name: "status", label: "Status", widget: "select", options: ["Live", "Coming Soon", "Beta"], default: "Live" }
